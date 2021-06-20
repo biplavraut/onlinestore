@@ -1,0 +1,352 @@
+<!doctype html> {% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Biplav">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="description" content="This is test websiote">
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="{% static 'app/images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'app/images/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'app/images/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'app/images/apple-touch-icon-114x114.png' %}">
+
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/font-icons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/theme-vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/responsive.css' %}" />
+
+    <!-- revolution slider -->
+    <link rel='stylesheet' href="{% static 'app/revolution/revolution-addons/bubblemorph/css/revolution.addon.bubblemorph.css' %}" type='text/css' media='all' />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/revolution/css/settings.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/revolution/css/layers.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/revolution/css/navigation.css' %}">
+
+    <title>Tandav Store | {% block title %} {% endblock title %} </title>
+</head>
+
+<body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header class="header-with-topbar">
+        <div class="top-bar bg-extra-dark-gray d-none d-md-inline-block padding-35px-lr md-no-padding-lr">
+            <div class="container-fluid nav-header-container">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="col-12 text-center text-sm-left col-sm-auto mr-auto pl-lg-0">
+                        <p class="text-medium m-0"><span class="font-weight-500 text-white">Offer: </span>Worldwide free shipping for all orders of $150</p>
+                    </div>
+                    <div class="col-auto d-none d-sm-block text-right px-lg-0 font-size-0">
+                        <div class="top-bar-contact">
+                            <span class="top-bar-contact-list border-none md-no-padding-right">
+                                    <i class="feather icon-feather-phone-call icon-extra-small text-white"></i>0222 8899900
+                                </span>
+                            <span class="top-bar-contact-list d-none d-lg-inline-block border-none pr-0">
+                                    <i class="feather icon-feather-map-pin icon-extra-small text-white"></i>
+                                    401 Broadway, 24th Floor, San Francisco
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-boxed navbar-light bg-white header-light top-space fixed-top header-reverse-scroll">
+            <div class="container-fluid nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
+                    <a class="navbar-brand" href="/">
+                        <img src="{% static 'app/images/logo-black.png' %}" data-at2x="{% static 'app/images/logo-black@2x.png' %}" alt="" class="default-logo">
+                        <img src="{% static 'app/images/logo-black.png' %}" data-at2x="{% static 'app/images/logo-black@2x.png' %}" alt="" class="alt-logo">
+                        <img src="{% static 'app/images/logo-black.png' %}" data-at2x="{% static 'app/images/logo-black@2x.png' %}" class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto col-lg-8 menu-order px-lg-0">
+                    <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                        </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="#" class="nav-link">Parent Category 1</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown"><a href="{% url 'mobile' %}">Mobile</a></li>
+                                    <li class="dropdown"><a href="#">Category 1</a></li>
+                                    <li class="dropdown"><a href="#">Category 2</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="#" class="nav-link">Parent Category 2</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown"><a href="#">Category 1</a></li>
+                                    <li class="dropdown"><a href="#">Category 2</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto col-lg-2 text-right pr-0 font-size-0">
+                    <div class="header-search-icon search-form-wrapper">
+                        <a href="javascript:void(0)" class="search-form-icon header-search-form"><i class="feather icon-feather-search"></i></a>
+                        <!-- start search input -->
+                        <div class="form-wrapper">
+                            <button title="Close" type="button" class="search-close alt-font">×</button>
+                            <form id="search-form" role="search" method="get" class="search-form text-left" action="search-result.html">
+                                <div class="search-form-box">
+                                    <span class="search-label alt-font text-small text-uppercase text-medium-gray">What are you looking for?</span>
+                                    <input class="search-input alt-font" id="search-form-input5e219ef164995" placeholder="Enter your keywords..." name="s" value="" type="text" autocomplete="off">
+                                    <button type="submit" class="search-button">
+                                            <i class="feather icon-feather-search" aria-hidden="true"></i>
+                                        </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end search input -->
+                    </div>
+                    <div class="header-language dropdown d-lg-inline-block">
+                        <a href="javascript:void(0);"><i class="feather icon-feather-user"></i></a>
+                        <ul class="dropdown-menu alt-font">
+                            <li><a href="{% url 'login' %}" title="Login">Login</a></li>
+                            <li><a href="{% url 'customerregistration' %}" title="Register">Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-language dropdown d-lg-inline-block">
+                        <a href="javascript:void(0);"><i class="feather icon-feather-user"></i></a>
+                        <ul class="dropdown-menu alt-font">
+                            <li><a href="{% url 'profile' %}" title="Profile">Profile</a></li>
+                            <li><a href="{% url 'orders' %}" title="Orders">Orders</a></li>
+                            <li><a href="{% url 'changepassword' %}" title="Change Password">Settings</a></li>
+                            <li><a href="#" title="Logout">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-cart-icon dropdown">
+                        <a href="javascript:void(0);"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font bg-extra-dark-gray text-white">2</span></a>
+                        <ul class="dropdown-menu cart-item-list">
+                            <li class="cart-item align-items-center">
+                                <a href="javascript:void(0);" class="alt-font close">×</a>
+                                <div class="product-image">
+                                    <a href="single-product.html"><img src="https://via.placeholder.com/150x191" class="cart-thumb" alt="" /></a>
+                                </div>
+                                <div class="product-detail alt-font">
+                                    <a href="single-product.html">Delica Omtantur</a>
+                                    <span class="item-ammount">$100.00</span>
+                                </div>
+                            </li>
+                            <li class="cart-item align-items-center">
+                                <a href="javascript:void(0);" class="alt-font close">×</a>
+                                <div class="product-image">
+                                    <a href="single-product.html"><img src="https://via.placeholder.com/150x191" class="cart-thumb" alt="" /></a>
+                                </div>
+                                <div class="product-detail alt-font">
+                                    <a href="single-product.html">Gianvito Rossi</a>
+                                    <span class="item-ammount">$99.99</span>
+                                </div>
+                            </li>
+                            <li class="cart-item cart-total">
+                                <div class="alt-font margin-15px-bottom"><span class="w-50 d-inline-block text-medium text-uppercase">Subtotal:</span><span class="w-50 d-inline-block text-right text-medium font-weight-500">$199.99</span></div>
+                                <a href="{% url 'add-to-cart' %}" class="btn btn-small btn-dark-gray">view cart</a>
+                                <a href="{% url 'checkout' %}" class="btn btn-small btn-neon-orange">checkout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end header -->
+    {% block banner_slider %} {% endblock banner_slider %}
+    <!-- end slider -->
+    <!-- Start info -->
+    {% block livesale %} {% endblock livesale %}
+    <!-- end info -->
+    <!-- start body content -->
+    {% block main-content %} {% endblock main-content %}
+    <!-- end body content -->
+
+    <!-- start footer -->
+    <footer class="footer-dark bg-slate-blue">
+        <div class="footer-top padding-five-tb lg-padding-eight-tb md-padding-50px-tb">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg-3 col-sm-6 order-5 order-lg-0 text-md-center text-lg-left last-paragraph-no-margin">
+                        <a href="/" class="footer-logo margin-25px-bottom margin-5px-top d-inline-block"><img src="{% static 'app/images/logo-white.png' %}" data-at2x="images/logo-white@2x.png" alt=""></a>
+                        <p>We create digital experiences for brands companies by using creativity.</p>
+                        <p>&copy; Copyright 2021 <a href="/" class="text-decoration-line-bottom text-white">BIplav</a></p>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg offset-xl-1 col-md-3 col-sm-4 order-1 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-15px-bottom xs-margin-10px-bottom">Categories</span>
+                        <ul>
+                            <li><a href="/">For men</a></li>
+                            <li><a href="/">For woman</a></li>
+                            <li><a href="/">Accessories</a></li>
+                            <li><a href="/">Collections</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg col-md-3 col-sm-4 order-2 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-15px-bottom xs-margin-10px-bottom">Company</span>
+                        <ul>
+                            <li><a href="/">About company</a></li>
+                            <li><a href="/">Our services</a></li>
+                            <li><a href="/">Latest blogs</a></li>
+                            <li><a href="/">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg col-md-3 col-sm-4 order-3 order-lg-0 md-margin-40px-bottom xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-15px-bottom xs-margin-10px-bottom">Resources</span>
+                        <ul>
+                            <li><a href="/">Theme guide</a></li>
+                            <li><a href="/">Support desk</a></li>
+                            <li><a href="/">What we offer</a></li>
+                            <li><a href="/">Return</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                    <!-- start footer column -->
+                    <div class="col-12 col-lg col-md-3 col-sm-6 order-4 order-lg-0 xs-margin-25px-bottom">
+                        <span class="alt-font font-weight-500 d-block text-white margin-15px-bottom xs-margin-10px-bottom">Payments</span>
+                        <ul>
+                            <li><a href="/">Free delivery</a></li>
+                            <li><a href="/">100 days refund</a></li>
+                            <li><a href="/">Multiple payments</a></li>
+                            <li><a href="/">Sustainable</a></li>
+                        </ul>
+                    </div>
+                    <!-- end footer column -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+    <!-- javascript -->
+    <script type="text/javascript" src="{% static 'app/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/theme-vendors.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/main.js' %}"></script>
+
+
+    <!-- revolution js files -->
+    <script type="text/javascript" src="{% static 'app/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <!-- revolution js files -->
+    <script type="text/javascript" src="{% static 'app/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+    <!-- BUBBLEMORPH ADD-ON FILES -->
+    <script type='text/javascript' src="{% static 'app/revolution/revolution-addons/bubblemorph/js/revolution.addon.bubblemorph.min.js' %}"></script>
+
+    <script type="text/javascript">
+        var revapi263,
+            tpj;
+        (function() {
+            if (!/loaded|interactive|complete/.test(document.readyState))
+                document.addEventListener("DOMContentLoaded", onLoad);
+            else
+                onLoad();
+
+            function onLoad() {
+                if (tpj === undefined) {
+                    tpj = jQuery;
+                    if ("off" == "on")
+                        tpj.noConflict();
+                }
+                if (tpj("#rev_slider_35_1").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#rev_slider_35_1");
+                } else {
+                    var revOffset = tpj(window).width() <= 767 ? '77px' : '128px';
+                    revapi263 = tpj("#rev_slider_35_1").show().revolution({
+                        sliderType: "standard",
+                        jsFileLocation: "{% static 'app/revolution/js/' %}",
+                        sliderLayout: "fullwidth",
+                        dottedOverlay: "none",
+                        delay: 9000,
+                        navigation: {
+                            keyboardNavigation: "on",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation: "off",
+                            mouseScrollReverse: "default",
+                            onHoverStop: "off",
+                            touch: {
+                                touchenabled: "on",
+                                touchOnDesktop: "on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 1,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            },
+                            tabs: {
+                                enable: true,
+                                style: 'erinyen',
+                                direction: 'horizontal',
+                                h_align: "center",
+                                v_align: "bottom",
+                                h_offset: -480,
+                                v_offset: 80,
+                                space: 25,
+                                hide_onleave: false,
+                                hide_onmobile: false,
+                                wrapper_padding: 0,
+                                width: 20,
+                                height: ['auto'],
+                                wrapper_color: 'transparent',
+                                wrapper_opacity: '0',
+                                tmp: '<span class="alt-font text-extra-dark-gray">{{param1}}</span>',
+                            }
+                        },
+                        responsiveLevels: [1240, 1025, 992, 480],
+                        visibilityLevels: [1240, 1024, 778, 480],
+                        gridwidth: [1140, 1024, 778, 480],
+                        gridheight: [870, 640, 910, 868],
+                        lazyType: "none",
+                        shadow: 0,
+                        spinner: "spinner5",
+                        stopLoop: "on",
+                        stopAfterLoops: 0,
+                        stopAtSlide: 1,
+                        shuffle: "off",
+                        autoHeight: "off",
+                        fullScreenAutoWidth: "off",
+                        fullScreenAlignForce: "off",
+                        fullScreenOffsetContainer: "",
+                        fullScreenOffset: revOffset,
+                        disableProgressBar: "on",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLimit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            nextSlideOnWindowFocus: "off",
+                            disableFocusListener: false,
+                        }
+                    });
+                }; /* END OF revapi call */
+
+                BubbleMorphAddOn(jQuery, revapi263);
+            }; /* END OF ON LOAD FUNCTION */
+        }()); /* END OF WRAPPING FUNCTION */
+    </script>
+    <!-- end revolution slider -->
+</body>
+
+</html>
