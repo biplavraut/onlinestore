@@ -8,6 +8,8 @@ class Product(models.Model):
     img = models.ImageField(upload_to = "images")
     list_price = models.FloatField(default = None, blank = True, null = True)
     discount = models.FloatField(default=0, blank=False, null=  False)
+    def __str__(self):
+        return self.product_name
 
 class ProductDiscount(models.Model):
     product_id = models.ForeignKey(Product, on_delete= models.CASCADE)
