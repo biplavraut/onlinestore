@@ -13,7 +13,7 @@ class Product(models.Model):
         return self.product_name
 
     def calculate_discount(self):
-        return False
+        return 0
 
 
 class ProductDiscount(models.Model):

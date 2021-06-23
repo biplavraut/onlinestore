@@ -255,14 +255,14 @@
                 <ul class="product-listing shop-wrapper grid grid-loading grid-5col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
                     <li class="grid-sizer"></li>
                     <!-- start product item -->
-
+                    {% for product in products%}
                     <li class="grid-item wow animate__fadeIn">
-                        {% for product in products%}
+
                         <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
                             <div class="product-image">
                                 <a href="single-product.html">
                                     <img src="{{product.img.url}}" alt="" />
-                                    <img class="hover-img" src="{{product.img.url}}" alt="" />
+                                    <!-- <img class="hover-img" src="{{product.img.url}}" alt="" /> -->
                                 </a>
                                 <div class="product-hover-details">
                                     <a href="#" class="alt-font text-white text-small font-weight-500 text-uppercase"><i class="feather icon-feather-shopping-bag margin-10px-right"></i>Add to cart</a>
@@ -277,9 +277,9 @@
                                 <div class="product-price text-medium">${{product.list_price}}</div>
                             </div>
                         </div>
-                        {% endfor%}
-                    </li>
 
+                    </li>
+                    {% endfor%}
                     <!-- end product item -->
      
                 </ul>
