@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Product(models.Model):
+    # product_id = primary key will be automatically created when an object is added.
     product_name = models.CharField(max_length = 100)
     product_description= models.CharField(max_length = 200)
     release_date = models.DateTimeField("date released")
@@ -15,9 +16,15 @@ class Product(models.Model):
     def calculate_discount(self):
         return 0
 
-
 class ProductDiscount(models.Model):
     product_id = models.ForeignKey(Product, on_delete= models.CASCADE)
     discount_rate = models.FloatField(default=0)
     
-    
+class LatestBlog(models.Model):
+    blog_name = models.CharField(max_length=100)
+    blog_discription = models.CharField(max_length=200)
+    release_date = models.DateTimeField("date released")
+    img = models.ImageField(upload_to = "images")
+
+    def __str__(self):
+        return self.blog_name

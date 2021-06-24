@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from .models import Product, ProductDiscount
+from .models import Product, ProductDiscount, LatestBlog
 
 def base(request):
  return render(request, 'app/base.html')
 
 def home(request):
     products = Product.objects.all() # Get all products from the DD and store it in 'products' variable.
+    blogs = LatestBlog.objects.all()
 
-    return render(request, 'app/home.html', {'products':products})
+    return render(request, 'app/home.html', {'products':products, 'blogs':blogs})
 
 def product_detail(request):
     return render(request, 'app/productdetail.html')

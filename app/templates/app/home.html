@@ -305,57 +305,21 @@
                 <ul class="blog-classic blog-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
                     <li class="grid-sizer"></li>
                     <!-- start blog item -->
+                    {% for blog in blogs%}
                     <li class="grid-item wow animate__fadeIn">
                         <div class="blog-post">
                             <div class="blog-post-image margin-40px-bottom md-margin-35px-bottom xs-margin-25px-bottom">
-                                <a href="blog-post-layout-01.html"><img src="https://via.placeholder.com/526x368" alt="" /></a>
+                                <a href="blog-post-layout-01.html"><img src="{{blog.img.url}}" alt="" /></a>
                             </div>
                             <div class="post-details">
-                                <a href="blog-post-layout-01.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">The best way to predict the future is to create it</a>
-                                <p class="w-95">Lorem ipsum is simply dummy text printing typesetting industry...</p>
+                                <a href="blog-post-layout-01.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">{{blog.blog_name}}</a>
+                                <p class="w-95">{{blog.blog_discription}}</p>
                             </div>
                         </div>
                     </li>
+                    {% endfor%}
                     <!-- end blog item -->
-                    <!-- start blog item -->
-                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s">
-                        <div class="blog-post">
-                            <div class="blog-post-image margin-40px-bottom md-margin-35px-bottom xs-margin-25px-bottom">
-                                <a href="blog-post-layout-02.html"><img src="https://via.placeholder.com/526x368" alt="" /></a>
-                            </div>
-                            <div class="post-details">
-                                <a href="blog-post-layout-02.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">Winners make a habit of facturing positivev</a>
-                                <p class="w-95">Lorem ipsum is simply dummy text printing typesetting industry...</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- end blog item -->
-                    <!-- start blog item -->
-                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s">
-                        <div class="blog-post">
-                            <div class="blog-post-image margin-40px-bottom md-margin-35px-bottom xs-margin-25px-bottom">
-                                <a href="blog-post-layout-03.html"><img src="https://via.placeholder.com/526x368" alt="" /></a>
-                            </div>
-                            <div class="post-details">
-                                <a href="blog-post-layout-03.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">Computers are to design as microwaves are to cooking</a>
-                                <p class="w-95">Lorem ipsum is simply dummy text printing typesetting industry...</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- end blog item -->
-                    <!-- start blog item -->
-                    <li class="grid-item wow animate__fadeIn" data-wow-delay="0.6s">
-                        <div class="blog-post">
-                            <div class="blog-post-image margin-40px-bottom md-margin-35px-bottom xs-margin-25px-bottom">
-                                <a href="blog-post-layout-05.html"><img src="https://via.placeholder.com/526x368" alt="" /></a>
-                            </div>
-                            <div class="post-details">
-                                <a href="blog-post-layout-05.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom"> A company is only as good as the people it keeps</a>
-                                <p class="w-95">Lorem ipsum is simply dummy text printing typesetting industry...</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- end blog item -->
+  
                 </ul>
             </div>
         </div>

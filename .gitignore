@@ -113,5 +113,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#media
-media/
+##media
+ media/
