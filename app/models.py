@@ -6,7 +6,7 @@ class Product(models.Model):
     product_name = models.CharField(max_length = 100)
     product_description= models.CharField(max_length = 200)
     release_date = models.DateTimeField("date released")
-    img = models.ImageField(upload_to = "images")
+    img = models.ImageField(upload_to = "product_img")
     list_price = models.FloatField(default = None, blank = True, null = True)
     discount = models.FloatField(default=0, blank=False, null=  False)
     on_sale = models.BooleanField(default=False)
@@ -24,7 +24,7 @@ class LatestBlog(models.Model):
     blog_name = models.CharField(max_length=100)
     blog_description = models.TextField()
     release_date = models.DateTimeField("date released")
-    img = models.ImageField(upload_to = "images")
+    img = models.ImageField(upload_to = "blog_img")
 
     def __str__(self):
         return self.blog_name
@@ -32,7 +32,7 @@ class LatestBlog(models.Model):
 class Slider(models.Model):
     title = models.CharField(max_length = 255)
     sub_title = models.CharField(max_length = 255)
-    img = models.ImageField(upload_to ="images")
+    img = models.ImageField(upload_to ="slider_img")
     display = models.BooleanField(default = False)
     link = models.CharField(max_length = 255)
     slider_description = models.TextField(max_length=200)
