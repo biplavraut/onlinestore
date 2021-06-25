@@ -74,22 +74,22 @@
                         <ul class="navbar-nav alt-font">
                             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                             <li class="nav-item dropdown simple-dropdown">
-                                <a href="#" class="nav-link">Parent Category 1</a>
+                                <a href="#" class="nav-link">Category</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li class="dropdown"><a href="{% url 'mobile' %}">Mobile</a></li>
-                                    <li class="dropdown"><a href="#">Category 1</a></li>
-                                    <li class="dropdown"><a href="#">Category 2</a></li>
+                                    {% for product_category in product_categories %}
+                                    <li class="dropdown"><a href="{% url 'mobile' %}">{{ product_category.category_title }}</a></li>
+                                    {% endfor %}
 
                                 </ul>
                             </li>
                             <li class="nav-item dropdown simple-dropdown">
-                                <a href="#" class="nav-link">Parent Category 2</a>
+                                <a href="#" class="nav-link">Brands</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li class="dropdown"><a href="#">Category 1</a></li>
-                                    <li class="dropdown"><a href="#">Category 2</a></li>
-
+                                    {% for brand in brands %}
+                                    <li class="dropdown"><a href="#">{{brand.brand_name}}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
                         </ul>
@@ -294,7 +294,7 @@
                                 drag_block_vertical: false
                             },
                             tabs: {
-                                enable: true,
+                                enable: false,
                                 style: 'erinyen',
                                 direction: 'horizontal',
                                 h_align: "center",
@@ -310,6 +310,46 @@
                                 wrapper_color: 'transparent',
                                 wrapper_opacity: '0',
                                 tmp: '<span class="alt-font text-extra-dark-gray">{{param1}}</span>',
+                            },
+                            bullets: {
+                                enable: true,
+                                hide_onmobile: false,
+                                style: "hermes",
+                                hide_onleave: false,
+                                direction: "horizontal",
+                                h_align: "center",
+                                v_align: "bottom",
+                                h_offset: 0,
+                                v_offset: 40,
+                                space: 12,
+                                tmp: ''
+                            },
+                            arrows: {
+                                enable: true,
+                                style: 'uranus',
+                                tmp: '',
+                                rtl: false,
+                                hide_onleave: false,
+                                hide_onmobile: true,
+                                hide_under: 767,
+                                hide_over: 9999,
+                                hide_delay: 200,
+                                hide_delay_mobile: 1200,
+                                left: {
+                                    container: 'slider',
+                                    h_align: 'left',
+                                    v_align: 'center',
+                                    h_offset: 64,
+                                    v_offset: 0
+                                },
+                                right: {
+                                    container: 'slider',
+                                    h_align: 'right',
+                                    v_align: 'center',
+                                    h_offset: 64,
+                                    v_offset: 0
+                                }
+
                             }
                         },
                         responsiveLevels: [1240, 1025, 992, 480],
