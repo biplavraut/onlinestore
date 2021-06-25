@@ -22,9 +22,21 @@ class ProductDiscount(models.Model):
     
 class LatestBlog(models.Model):
     blog_name = models.CharField(max_length=100)
-    blog_discription = models.CharField(max_length=200)
+    blog_description = models.TextField()
     release_date = models.DateTimeField("date released")
     img = models.ImageField(upload_to = "images")
 
     def __str__(self):
         return self.blog_name
+
+class Slider(models.Model):
+    title = models.CharField(max_length = 255)
+    sub_title = models.CharField(max_length = 255)
+    img = models.ImageField(upload_to ="images")
+    display = models.BooleanField(default = False)
+    link = models.CharField(max_length = 255)
+    slider_description = models.TextField(max_length=200)
+
+
+    def __str__(self):
+        return self.title

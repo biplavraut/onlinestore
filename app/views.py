@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product, ProductDiscount, LatestBlog
+from .models import Product, ProductDiscount, LatestBlog, Slider
 
 def base(request):
  return render(request, 'app/base.html')
@@ -7,8 +7,10 @@ def base(request):
 def home(request):
     products = Product.objects.all() # Get all products from the DD and store it in 'products' variable.
     blogs = LatestBlog.objects.all()
+    sliders = Slider.objects.all()
 
-    return render(request, 'app/home.html', {'products':products, 'blogs':blogs})
+
+    return render(request, 'app/home.html', {'products':products, 'blogs':blogs, 'sliders123':sliders})
 
 def product_detail(request):
     return render(request, 'app/productdetail.html')

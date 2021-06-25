@@ -7,8 +7,10 @@
             <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
             <div id="rev_slider_35_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
                 <ul>
+
                     <!-- SLIDE 01 -->
-                    <li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"
+                    {% for slider in sliders123 %}
+                    <li data-index="rs-{{forloop.counter}}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"
                         data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
                         <img src="{% static 'app/images/transparent.png' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
@@ -18,14 +20,15 @@
                             data-voffset="['-155','-115','50','50']" data-width="auto" data-height="none" data-whitespace="nowrap" data-fontsize="['18','17','17','22']" data-lineheight="['inherit','29','30','23']" data-type="text" data-responsive_offset="on"
                             data-responsive="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                             data-textAlign="['left','left','center','center']">
-                            <span class="w-25px h-1px bg-gradient-orange-pink d-lg-inline-block d-none align-middle margin-20px-right md-margin-15px-right"></span>Dress up your style
+                            <span class="w-25px h-1px bg-gradient-orange-pink d-lg-inline-block d-none align-middle margin-20px-right md-margin-15px-right"></span>{{slider.title}}
                         </div>
 
                         <!-- summer collection layer -->
                         <div class="tp-caption alt-font text-extra-dark-gray font-weight-500" id="slide-411-layer-02" data-x="['left','left','center','center']" data-hoffset="['30','70','0','0']" data-y="['middle','middle','top','top']" data-voffset="['-10','-20','90','90']"
                             data-fontsize="['90','56','60','60']" data-lineheight="['85','52','60','60']" data-letterspacing="['-4','-2','-2','-2']" data-width="auto" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive="on" data-responsive_offset="on"
                             data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">Summer<br/>collections</div>
+                            data-textAlign="['left','left','center','center']">{{slider.sub_title|wordwrap:5|linebreaks}}  
+                        </div>
 
                         <!-- Shop collection button layer -->
                         <a class="tp-caption btn btn-medium btn-white btn-box-shadow collection-btn" href="shop-wide.html" target="_blank" id="slide-411-layer-03" data-x="['left','left','center','center']" data-hoffset="['-5','10','0','0']" data-y="['middle','middle','top','top']"
@@ -40,11 +43,11 @@
                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; width: 100%;">
                         </div>
 
-                        <!-- Old man image layer -->
+                        <!-- model n image layer -->
                         <div class="tp-caption tp-resizeme model-img" id="slide-411-layer-04" data-x="['right','right','center','center']" data-hoffset="['-165','-20','70','50']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','-70','-70']" data-width="none"
                             data-height="auto" data-whitespace="nowrap" data-responsive_offset="on" data-type="image" data-frames='[{"delay":100,"speed":2000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
                             data-textalign="['inherit','inherit','inherit','center']" style="z-index: 1; pointer-events:none;">
-                            <img src="{% static 'app/img/home-shop-modern-06.png' %}" data-ww="['800px','550px','550px','520px']" data-hh="['auto','auto','auto','auto']" alt="" data-no-retina>
+                            <img src="{{slider.img.url}}" data-ww="['800px','550px','550px','520px']" data-hh="['auto','auto','auto','auto']" alt="" data-no-retina>
                         </div>
 
                         <!-- big orange circle -->
@@ -61,113 +64,7 @@
                             data-blendmode="normal" style="z-index: -7; pointer-events:none;"></div>
                     </li>
 
-                    <!-- SLIDE 02 -->
-                    <li data-index="rs-74" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"
-                        data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="02" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="{% static 'app/images/transparent.png' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <!-- Dress up your style text -->
-                        <div class="tp-caption alt-font text-large text-gradient-orange-pink font-weight-500 letter-spacing-minus-1px" id="slide-411-layer-07" data-x="['left','left','center','center']" data-hoffset="['35','70','0','0']" data-y="['middle','middle','top','top']"
-                            data-voffset="['-155','-115','50','50']" data-width="auto" data-height="none" data-whitespace="nowrap" data-fontsize="['18','17','17','22']" data-lineheight="['inherit','29','30','23']" data-type="text" data-responsive_offset="on"
-                            data-responsive="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">
-                            <span class="w-25px h-1px bg-gradient-orange-pink d-lg-inline-block d-none align-middle margin-20px-right md-margin-15px-right"></span>Most unique styles
-                        </div>
-
-                        <!-- summer collection layer -->
-                        <div class="tp-caption alt-font text-extra-dark-gray font-weight-500" id="slide-411-layer-08" data-x="['left','left','center','center']" data-hoffset="['30','70','0','0']" data-y="['middle','middle','top','top']" data-voffset="['-10','-20','90','90']"
-                            data-fontsize="['90','56','60','60']" data-lineheight="['85','52','60','60']" data-letterspacing="['-4','-2','-2','-2']" data-width="auto" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive="on" data-responsive_offset="on"
-                            data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">Discover<br/>bestseller</div>
-
-                        <!-- Shop collection button layer -->
-                        <a class="tp-caption btn btn-medium btn-white btn-box-shadow collection-btn" href="shop-wide.html" target="_blank" id="slide-411-layer-09" data-x="['left','left','center','center']" data-hoffset="['-5','10','0','0']" data-y="['middle','middle','top','top']"
-                            data-voffset="['155','125','180','240']" data-whitespace="nowrap" data-fontsize="['12','inherit','16','14']" data-type="button" data-responsive="on" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
-                            data-textAlign="['left','left','left','center']" data-margintop="[40,60,60,0]" data-marginright="[40,60,60,0]" data-marginbottom="[50,120,120,0]" data-marginleft="[40,60,60,0]" data-paddingtop="[inherit,inherit,inherit,9]" data-paddingbottom="[inherit,inherit,inherit,9]"
-                            data-paddingright="[inherit,inherit,inherit,20]" data-paddingleft="[inherit,inherit,inherit,20]" style="-webkit-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);-moz-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1); z-index:9;">shop collection</a>
-
-                        <!-- COLUMN -->
-                        <div class="tp-caption fashion-blank-column" id="slide-638-layer-2" data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" data-width="none" data-height="['inherit','inherit','550px','330px']"
-                            data-whitespace="nowrap" data-type="column" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-columnwidth="50%" data-verticalalign="bottom" data-margintop="[0,0,0,0]" data-marginright="[0,0,0,0]" data-marginbottom="[0,0,0,0]" data-marginleft="[0,0,0,0]" data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; width: 100%;">
-                        </div>
-
-                        <!-- Old man image layer -->
-                        <div class="tp-caption tp-resizeme model-img" id="slide-411-layer-10" data-x="['right','right','center','center']" data-hoffset="['-165','-20','70','50']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','-70','-70']" data-width="none"
-                            data-height="auto" data-whitespace="nowrap" data-responsive_offset="on" data-type="image" data-frames='[{"delay":100,"speed":2000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
-                            data-textalign="['inherit','inherit','inherit','center']" style="z-index: 1; pointer-events:none;">
-                            <img src="{% static 'app/img/home-shop-modern-07.png' %}" data-ww="['800px','550px','550px','520px']" data-hh="['auto','auto','auto','auto']" alt="" data-no-retina>
-                        </div>
-
-                        <!-- big orange circle -->
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-bubblemorph" id="slide-411-layer-11" data-x="['right','right','right','right']" data-hoffset="['-600','-300','-250','-250']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-180','-400','-200','-50']"
-                            data-width="['900','900','850','480']" data-height="['900','900','850','480']" data-whitespace="nowrap" data-type="shape" data-bubblesbg="{&type&:&linear&,&angle&:&180&,&colors&:[{&r&:235,&g&:60,&b&:119,&a&:&1&,&position&:0,&align&:&top&},{&r&:235,&g&:60,&b&:119,&a&:&1&,&position&:0,&align&:&bottom&},{&r&:245,&g&:147,&b&:23,&a&:&1&,&position&:100,&align&:&bottom&},{&r&:245,&g&:147,&b&:23,&a&:&1&,&position&:100,&align&:&top&}]}"
-                            data-numbubbles="10|7|7|8" data-bubblesbufferx="150|80|50|70" data-bubblesbuffery="150|80|50|70" data-bubblesspeedx="0.25|0.15|0.25|0.25" data-bubblesspeedy="0.25|0.15|0.25|0.25" data-responsive="on" data-responsive_offset="on"
-                            data-frames='[{"delay":500,"speed":3000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]' data-blendmode="normal"
-                            style="z-index: -7; pointer-events:none;"></div>
-
-                        <!-- small blue circle -->
-                        <div class="tp-caption  tp-no-events tp-shape tp-shapewrapper tp-bubblemorph" id="slide-411-layer-12" data-x="['right','right','left','left']" data-hoffset="['-600','-250','-150','-220']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['400','200','-50','-50']"
-                            data-width="['500','450','450','380']" data-height="['500','450','450','380']" data-responsive="on" data-responsive_offset="on" data-whitespace="nowrap" data-type="shape" data-bubblesbg="{&type&:&linear&,&angle&:&180&,&colors&:[{&r&:176,&g&:0,&b&:247,&a&:&1&,&position&:0,&align&:&top&},{&r&:176,&g&:0,&b&:247,&a&:&1&,&position&:0,&align&:&bottom&},{&r&:79,&g&:0,&b&:246,&a&:&1&,&position&:100,&align&:&bottom&},{&r&:79,&g&:0,&b&:246,&a&:&1&,&position&:100,&align&:&top&}]}"
-                            data-numbubbles="8|9|9|7" data-bubblesbufferx="90|50|50|50" data-bubblesbuffery="90|50|50|50" data-bubblesspeedx="0.25|0.25|0.15|0.25" data-bubblesspeedy="0.25|0.25|0.15|0.25" data-frames='[{"delay":500,"speed":3000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:0.8;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
-                            data-blendmode="normal" style="z-index: -7; pointer-events:none;"></div>
-                    </li>
-
-                    <!-- SLIDE 03 -->
-                    <li data-index="rs-75" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"
-                        data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="03" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="{% static 'app/images/transparent.png' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                        <!-- Dress up your style text -->
-                        <div class="tp-caption alt-font text-large text-gradient-orange-pink font-weight-500 letter-spacing-minus-1px" id="slide-411-layer-13" data-x="['left','left','center','center']" data-hoffset="['35','70','0','0']" data-y="['middle','middle','top','top']"
-                            data-voffset="['-155','-115','50','50']" data-width="auto" data-height="none" data-whitespace="nowrap" data-fontsize="['18','17','17','22']" data-lineheight="['inherit','29','30','23']" data-type="text" data-responsive_offset="on"
-                            data-responsive="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">
-                            <span class="w-25px h-1px bg-gradient-orange-pink d-lg-inline-block d-none align-middle margin-20px-right md-margin-15px-right"></span>Most exclusive brands
-                        </div>
-
-                        <!-- summer collection layer -->
-                        <div class="tp-caption alt-font text-extra-dark-gray font-weight-500" id="slide-411-layer-14" data-x="['left','left','center','center']" data-hoffset="['30','70','0','0']" data-y="['middle','middle','top','top']" data-voffset="['-10','-20','90','90']"
-                            data-fontsize="['90','56','60','60']" data-lineheight="['85','52','60','60']" data-letterspacing="['-4','-2','-2','-2']" data-width="auto" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive="on" data-responsive_offset="on"
-                            data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">Exclusive<br/>collections</div>
-
-                        <!-- Shop collection button layer -->
-                        <a class="tp-caption btn btn-medium btn-white btn-box-shadow collection-btn" href="shop-wide.html" target="_blank" id="slide-411-layer-15" data-x="['left','left','center','center']" data-hoffset="['-5','10','0','0']" data-y="['middle','middle','top','top']"
-                            data-voffset="['155','125','180','240']" data-whitespace="nowrap" data-fontsize="['12','inherit','16','14']" data-type="button" data-responsive="on" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
-                            data-textAlign="['left','left','left','center']" data-margintop="[40,60,60,0]" data-marginright="[40,60,60,0]" data-marginbottom="[50,120,120,0]" data-marginleft="[40,60,60,0]" data-paddingtop="[inherit,inherit,inherit,9]" data-paddingbottom="[inherit,inherit,inherit,9]"
-                            data-paddingright="[inherit,inherit,inherit,20]" data-paddingleft="[inherit,inherit,inherit,20]" style="-webkit-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);-moz-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1); z-index:9;">shop collection</a>
-
-                        <!-- COLUMN -->
-                        <div class="tp-caption fashion-blank-column" id="slide-638-layer-3" data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']" data-voffset="['0','0','0','0']" data-width="none" data-height="['inherit','inherit','550px','330px']"
-                            data-whitespace="nowrap" data-type="column" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-columnwidth="50%" data-verticalalign="bottom" data-margintop="[0,0,0,0]" data-marginright="[0,0,0,0]" data-marginbottom="[0,0,0,0]" data-marginleft="[0,0,0,0]" data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; width: 100%;">
-                        </div>
-
-                        <!-- Old man image layer -->
-                        <div class="tp-caption tp-resizeme model-img" id="slide-411-layer-16" data-x="['right','right','center','center']" data-hoffset="['-165','-20','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','-70','-70']" data-width="none"
-                            data-height="auto" data-whitespace="nowrap" data-responsive_offset="on" data-type="image" data-frames='[{"delay":100,"speed":2000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
-                            data-textalign="['inherit','inherit','inherit','center']" style="z-index: 1; pointer-events:none;">
-                            <img src="{% static 'app/img/home-shop-modern-08.png' %}" data-ww="['800px','550px','550px','520px']" data-hh="['auto','auto','auto','auto']" alt="" data-no-retina>
-                        </div>
-
-                        <!-- big orange circle -->
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-bubblemorph" id="slide-411-layer-17" data-x="['right','right','right','right']" data-hoffset="['-600','-300','-250','-250']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-180','-400','-200','-50']"
-                            data-width="['900','900','850','480']" data-height="['900','900','850','480']" data-whitespace="nowrap" data-type="shape" data-bubblesbg="{&type&:&linear&,&angle&:&180&,&colors&:[{&r&:235,&g&:60,&b&:119,&a&:&1&,&position&:0,&align&:&top&},{&r&:235,&g&:60,&b&:119,&a&:&1&,&position&:0,&align&:&bottom&},{&r&:245,&g&:147,&b&:23,&a&:&1&,&position&:100,&align&:&bottom&},{&r&:245,&g&:147,&b&:23,&a&:&1&,&position&:100,&align&:&top&}]}"
-                            data-numbubbles="10|7|7|8" data-bubblesbufferx="150|80|50|70" data-bubblesbuffery="150|80|50|70" data-bubblesspeedx="0.25|0.15|0.25|0.25" data-bubblesspeedy="0.25|0.15|0.25|0.25" data-responsive="on" data-responsive_offset="on"
-                            data-frames='[{"delay":500,"speed":3000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]' data-blendmode="normal"
-                            style="z-index: -7; pointer-events:none;"></div>
-
-                        <!-- small blue circle -->
-                        <div class="tp-caption  tp-no-events tp-shape tp-shapewrapper tp-bubblemorph" id="slide-411-layer-18" data-x="['right','right','left','left']" data-hoffset="['-600','-250','-150','-220']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['400','200','-50','-50']"
-                            data-width="['500','450','450','380']" data-height="['500','450','450','380']" data-responsive="on" data-responsive_offset="on" data-whitespace="nowrap" data-type="shape" data-bubblesbg="{&type&:&linear&,&angle&:&180&,&colors&:[{&r&:176,&g&:0,&b&:247,&a&:&1&,&position&:0,&align&:&top&},{&r&:176,&g&:0,&b&:247,&a&:&1&,&position&:0,&align&:&bottom&},{&r&:79,&g&:0,&b&:246,&a&:&1&,&position&:100,&align&:&bottom&},{&r&:79,&g&:0,&b&:246,&a&:&1&,&position&:100,&align&:&top&}]}"
-                            data-numbubbles="8|9|9|7" data-bubblesbufferx="90|50|50|50" data-bubblesbuffery="90|50|50|50" data-bubblesspeedx="0.25|0.25|0.15|0.25" data-bubblesspeedy="0.25|0.25|0.15|0.25" data-frames='[{"delay":500,"speed":3000,"frame":"0","from":"opacity:0;fb:30px;","to":"opacity:0.8;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
-                            data-blendmode="normal" style="z-index: -7; pointer-events:none;"></div>
-                    </li>
+                    {% endfor%}
                 </ul>
             </div>
         </div>
