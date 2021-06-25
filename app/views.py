@@ -1,5 +1,6 @@
+from django.contrib.admin.decorators import display
 from django.shortcuts import render
-from .models import Product, ProductDiscount, LatestBlog, Slider
+from .models import Product, ProductDiscount, LatestBlog, Slider, Brand, ProductCategory
 
 def base(request):
  return render(request, 'app/base.html')
@@ -8,9 +9,10 @@ def home(request):
     products = Product.objects.all() # Get all products from the DD and store it in 'products' variable.
     blogs = LatestBlog.objects.all()
     sliders = Slider.objects.all()
+    brands = Brand.objects.filter(display=True)
+    product_categories = ProductCategory.objects.all()
 
-
-    return render(request, 'app/home.html', {'products':products, 'blogs':blogs, 'sliders123':sliders})
+    return render(request, 'app/home.html', {'brands':brands,'product_categories': product_categories, 'products':products, 'blogs':blogs, 'sliders123':sliders})
 
 def product_detail(request):
     return render(request, 'app/productdetail.html')
