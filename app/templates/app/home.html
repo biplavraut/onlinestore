@@ -27,11 +27,11 @@
                         <div class="tp-caption alt-font text-extra-dark-gray font-weight-500" id="slide-411-layer-02" data-x="['left','left','center','center']" data-hoffset="['30','70','0','0']" data-y="['middle','middle','top','top']" data-voffset="['-10','-20','90','90']"
                             data-fontsize="['90','56','60','60']" data-lineheight="['85','52','60','60']" data-letterspacing="['-4','-2','-2','-2']" data-width="auto" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive="on" data-responsive_offset="on"
                             data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                            data-textAlign="['left','left','center','center']">{{slider.sub_title|wordwrap:5|linebreaks}}  
+                            data-textAlign="['left','left','center','center']">{{slider.sub_title|wordwrap:5|linebreaks}}
                         </div>
 
                         <!-- Shop collection button layer -->
-                        <a class="tp-caption btn btn-medium btn-white btn-box-shadow collection-btn" href="shop-wide.html" target="_blank" id="slide-411-layer-03" data-x="['left','left','center','center']" data-hoffset="['-5','10','0','0']" data-y="['middle','middle','top','top']"
+                        <a class="tp-caption btn btn-medium btn-white btn-box-shadow collection-btn" href="{{slider.link}}" target="_blank" id="slide-411-layer-03" data-x="['left','left','center','center']" data-hoffset="['-5','10','0','0']" data-y="['middle','middle','top','top']"
                             data-voffset="['155','125','180','240']" data-whitespace="nowrap" data-fontsize="['12','inherit','16','14']" data-type="button" data-responsive="on" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:[-100%];y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
                             data-textAlign="['left','left','left','center']" data-margintop="[40,60,60,0]" data-marginright="[40,60,60,0]" data-marginbottom="[50,120,120,0]" data-marginleft="[40,60,60,0]" data-paddingtop="[inherit,inherit,inherit,9]" data-paddingbottom="[inherit,inherit,inherit,9]"
                             data-paddingright="[inherit,inherit,inherit,20]" data-paddingleft="[inherit,inherit,inherit,20]" style="-webkit-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);-moz-box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1);box-shadow:0px 15px 40px 0px rgba(0,0,0,0.1); z-index:9;">shop collection</a>
@@ -157,7 +157,7 @@
 
                         <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
                             <div class="product-image">
-                                <a href="single-product.html">
+                                <a href="#">
                                     <img src="{{product.img.url}}" alt="" />
                                     <!-- <img class="hover-img" src="{{product.img.url}}" alt="" /> -->
                                 </a>
@@ -170,7 +170,7 @@
                                 </div>
                             </div>
                             <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                <a href="single-product.html" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">{{product.product_name}}</a>
+                                <a href="#" class="text-extra-dark-gray text-black-hover font-weight-500 d-inline-block">{{product.product_name}}</a>
                                 <div class="product-price text-medium">${{product.list_price}}</div>
                             </div>
                         </div>
@@ -178,11 +178,11 @@
                     </li>
                     {% endfor%}
                     <!-- end product item -->
-     
+
                 </ul>
             </div>
             <div class="col-12 text-center margin-3-rem-top wow animate__fadeIn" data-wow-delay="0.2s">
-                <a href="shop-left-sidebar.html" class="btn btn-medium btn-fancy btn-transparent-black">More collection</a>
+                <a href="#" class="btn btn-medium btn-fancy btn-transparent-black">More collection</a>
             </div>
         </div>
     </div>
@@ -206,17 +206,17 @@
                     <li class="grid-item wow animate__fadeIn">
                         <div class="blog-post">
                             <div class="blog-post-image margin-40px-bottom md-margin-35px-bottom xs-margin-25px-bottom">
-                                <a href="blog-post-layout-01.html"><img src="{{blog.img.url}}" alt="" /></a>
+                                <a href="#"><img src="{{blog.img.url}}" alt="" /></a>
                             </div>
                             <div class="post-details">
-                                <a href="blog-post-layout-01.html" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">{{blog.blog_name}}</a>
+                                <a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-dark-orange-hover d-block margin-20px-bottom xs-margin-10px-bottom">{{blog.blog_name}}</a>
                                 <p class="w-95">{{blog.blog_description}}</p>
                             </div>
                         </div>
                     </li>
                     {% endfor%}
                     <!-- end blog item -->
-  
+
                 </ul>
             </div>
         </div>

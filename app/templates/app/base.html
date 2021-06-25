@@ -294,7 +294,7 @@
                                 drag_block_vertical: false
                             },
                             tabs: {
-                                enable: true,
+                                enable: false,
                                 style: 'erinyen',
                                 direction: 'horizontal',
                                 h_align: "center",
@@ -310,6 +310,46 @@
                                 wrapper_color: 'transparent',
                                 wrapper_opacity: '0',
                                 tmp: '<span class="alt-font text-extra-dark-gray">{{param1}}</span>',
+                            },
+                            bullets: {
+                                enable: true,
+                                hide_onmobile: false,
+                                style: "hermes",
+                                hide_onleave: false,
+                                direction: "horizontal",
+                                h_align: "center",
+                                v_align: "bottom",
+                                h_offset: 0,
+                                v_offset: 40,
+                                space: 12,
+                                tmp: ''
+                            },
+                            arrows: {
+                                enable: true,
+                                style: 'uranus',
+                                tmp: '',
+                                rtl: false,
+                                hide_onleave: false,
+                                hide_onmobile: true,
+                                hide_under: 767,
+                                hide_over: 9999,
+                                hide_delay: 200,
+                                hide_delay_mobile: 1200,
+                                left: {
+                                    container: 'slider',
+                                    h_align: 'left',
+                                    v_align: 'center',
+                                    h_offset: 64,
+                                    v_offset: 0
+                                },
+                                right: {
+                                    container: 'slider',
+                                    h_align: 'right',
+                                    v_align: 'center',
+                                    h_offset: 64,
+                                    v_offset: 0
+                                }
+
                             }
                         },
                         responsiveLevels: [1240, 1025, 992, 480],
