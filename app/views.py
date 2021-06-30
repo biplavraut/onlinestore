@@ -46,3 +46,6 @@ def customerregistration(request):
 
 def checkout(request):
     return render(request, 'app/checkout.html')
+
+def contact(request):
+    return render(request, 'app/contact.html')
