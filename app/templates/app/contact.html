@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}Contact Us{% endblock title %} {% block main-content %}
+<!-- start page title -->
+<section class="wow animate__fadeIn bg-light-gray padding-25px-tb page-title-small">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-xl-8 col-lg-6">
+                <h1 class="alt-font text-extra-dark-gray font-weight-500 no-margin-bottom text-center text-lg-left">Contact Us</h1>
+            </div>
+            <div class="col-12 col-xl-4 col-lg-6 breadcrumb justify-content-center justify-content-lg-end text-small alt-font md-margin-10px-top">
+                <ul class="xs-text-center">
+                    <li><a href="/">Home</a></li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title -->
+<!-- start section -->
+<section class="big-section wow animate__fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center margin-six-bottom">
+                <h6 class="alt-font text-extra-dark-gray font-weight-500">Feel free to send message</h6>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form method="post" novalidate=""> {% csrf_token %}
+
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
+                            <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="Your name">
+                            <input class="medium-input bg-white margin-25px-bottom required" type="email" name="email" placeholder="Your email address">
+                            <input class="medium-input bg-white mb-0" type="tel" name="phone" placeholder="Your mobile">
+                        </div>
+                        <div class="col margin-4-rem-bottom sm-margin-20px-bottom">
+                            <textarea class="medium-textarea bg-white h-200px" rows="6" name="comment" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="col text-left sm-margin-20px-bottom">
+                            <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-10px-right margin-5px-top required">
+                            <label for="terms_condition" class="text-small d-inline-block align-top w-85 md-w-90 xs-w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                        </div>
+                        <div class="col text-center text-md-right">
+                            <!-- <input type="hidden" name="redirect" value=""> -->
+                            <button class="btn btn-medium btn-fancy btn-gradient-sky-blue-pink mb-0 " type="submit">Send Message</button>
+                        </div>
+                    </div>
+                    <div class="form-results d-none"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+{% endblock main-content %}
