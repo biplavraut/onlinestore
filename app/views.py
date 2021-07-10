@@ -60,8 +60,11 @@ def contact(request):
         contact.email = email
         contact.phone_number = phone_number
         contact.message = message
-        contact.save()
-        return HttpResponse("<h1>  Thanks <h1>")
-
-
+        saveContact = contact.save()
+        # Return to html file
+        if saveContact:
+            return render(request, 'app/contact.html', {'message':'message-sent'})
+        else:
+            return render(request, 'app/contact.html', {'message':'message-error'})
+        
     return render(request, 'app/contact.html')

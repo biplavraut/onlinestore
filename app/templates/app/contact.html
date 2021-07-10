@@ -20,6 +20,16 @@
 <section class="big-section wow animate__fadeIn">
     <div class="container">
         <div class="row justify-content-center">
+            <!-- start message box item -->
+            <!-- Only when message is sent -->
+            {% if message == 'message-sent' %}
+            <div class="col-12 col-md-9 col-lg-7 margin-35px-bottom alert alert-success alert-dismissible fade in show" role="alert">
+                <button type="button" class="close line-height-unset" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                <strong>Success!</strong> Your message has been sent.
+            </div>
+            {% endif %}
             <div class="col-md-12 text-center margin-six-bottom">
                 <h6 class="alt-font text-extra-dark-gray font-weight-500">Feel free to send message</h6>
             </div>
