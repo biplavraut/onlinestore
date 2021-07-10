@@ -1,6 +1,7 @@
 from django.contrib.admin.decorators import display
 from django.shortcuts import render
-from .models import Product, ProductDiscount, LatestBlog, Slider, Brand, ProductCategory
+from .models import Product, ProductDiscount, LatestBlog, Slider, Brand, ProductCategory, Contact
+from django.http import HttpResponse
 
 def base(request):
  return render(request, 'app/base.html')
@@ -11,8 +12,9 @@ def home(request):
     sliders = Slider.objects.all()
     brands = Brand.objects.filter(display=True)
     product_categories = ProductCategory.objects.all()
+    contacts = Contact.objects.all()
 
-    return render(request, 'app/home.html', {'brands':brands,'product_categories': product_categories, 'products':products, 'blogs':blogs, 'sliders123':sliders})
+    return render(request, 'app/home.html', {'brands':brands,'product_categories': product_categories, 'products':products, 'blogs':blogs, 'sliders123':sliders, 'contacts':contacts})
 
 def product_detail(request):
     return render(request, 'app/productdetail.html')
@@ -48,4 +50,18 @@ def checkout(request):
     return render(request, 'app/checkout.html')
 
 def contact(request):
+    if request.method == "POST":
+        contact = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone')
+        message = request.POST.get('comment')
+        contact.name = name
+        contact.email = email
+        contact.phone_number = phone_number
+        contact.message = message
+        contact.save()
+        return HttpResponse("<h1>  Thanks <h1>")
+
+
     return render(request, 'app/contact.html')

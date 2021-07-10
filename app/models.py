@@ -105,3 +105,14 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    phone_number= models.CharField(max_length=255, default=None, null = False)
+    message = models.TextField(null= True)
+
+    def __str__(self):
+        return  self.name
+
