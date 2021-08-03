@@ -106,8 +106,10 @@ class Slider(models.Model):
     def __str__(self):
         return self.title
 
-
+gender_options = (('M',"Male"),(
+'F', "Female"))
 class Contact(models.Model):
+    gender = models.CharField(choices=gender_options, max_length = 50, null= True)
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     phone_number= models.CharField(max_length=255, default=None, null = False)

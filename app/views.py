@@ -52,10 +52,12 @@ def checkout(request):
 def contact(request):
     if request.method == "POST":
         contact = Contact()
+        gender = request.POST.get('gender')
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone_number = request.POST.get('phone')
         message = request.POST.get('comment')
+        contact.gender =gender
         contact.name = name
         contact.email = email
         contact.phone_number = phone_number
