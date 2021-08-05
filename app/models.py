@@ -106,8 +106,15 @@ class Slider(models.Model):
     def __str__(self):
         return self.title
 
-gender_options = (('M',"Male"),(
-'F', "Female"))
+# Create Tuple to store all gender options
+gender_options = (
+    ('M',"Male"),
+    ('F', "Female"),
+    ('O', "Other"),
+    ('',"Prefer not to mention")
+    )
+
+
 class Contact(models.Model):
     gender = models.CharField(choices=gender_options, max_length = 50, null= True)
     name = models.CharField(max_length=255)
