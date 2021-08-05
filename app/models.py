@@ -20,7 +20,7 @@ def calculate_discount(product_id, list_price):
         discount = current_price * (discount_rate/100)
         return discount
     else:
-        return 0 ## Send user a message to set up discount for a product. Do not change the boolean value (On Sale) to True in this scenareio.
+        return current_price * (10/100) # Returns default 10 % discount.
 
 Shop_Sections = (
     ('Electronics', 'Electronics'),
