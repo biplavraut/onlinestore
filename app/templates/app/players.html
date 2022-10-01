@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background: green;
+            height: 100vh;
+            width: 100vw;
+        }
+        .form-bg{
+            background: white;
+            width: fit-content;
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="form-bg">
+            <form method = "POST" action="#"> {% csrf_token %}
+                <label for="p1name">Player1:</label><br>
+                <input type="text" id="p1name" name="pname1"><br>
+                <label for="p2name">Player2:</label><br>
+                <input type="text" id="p2name" name="pname2"><br>
+                <label for="p3name">Player3:</label><br>
+                <input type="text" id="p3name" name="pname3"><br>
+                <label for="p4name">Player4:</label><br>
+                <input type="text" id="p4name" name="pname4"><br>
+    
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+       
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,3 +1,7 @@
+from datetime import datetime
+from secrets import randbelow
+from unittest.util import _MAX_LENGTH
+from xmlrpc.client import DateTime
 from django.db import models
 
 # Create your models here.
@@ -84,6 +88,7 @@ class ProductDiscount(models.Model):
 
     def get_discount_rate(self, *args, **kwargs):
         return self.discount_rate
+        
     
 class LatestBlog(models.Model):
     blog_name = models.CharField(max_length=100)
@@ -116,3 +121,11 @@ class Contact(models.Model):
     def __str__(self):
         return  self.name
 
+class Players(models.Model):
+    
+    name= models.CharField(max_length=100)
+    type= models.IntegerField() #limit number from 1,2,3,4
+    room= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
